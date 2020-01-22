@@ -34,23 +34,23 @@ $(document).ready(function() {
 
   $("button#filterButton").click(function() {
     event.preventDefault();
-    var oldWords = [];
-    var newWords = [];
-    var wordCount = 0;
-    oldWords.push($("#sentence").val());
-    console.log(words)
 
-    var newWords = oldWords.map
+    var newArr = $("#sentence").val();
+    console.log(newArr);
+    var newObj = {};
 
+    for (var i = 0; i < newArr.length; i++) {
+      var word = newArr[i];
+      console.log(word);
 
-    
-    
-  var name = function(word){
-    return word + 1;
-  }
-    var name = (word => word + 1)
+      if (Number.isNaN(newObj[word]) === true) {
+          newObj[word] = 1;
+      } else {
+          newObj[word] += 1;
+      }
+    }
+    console.log(newObj);
 
-  })
-  
+  }); 
 
 });
