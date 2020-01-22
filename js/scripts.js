@@ -5,7 +5,7 @@ $(document).ready(function() {
     for(var i=1; i<4; i++) {
       arr.push($(`#thing${i}`).val())
     }
-    console.log(arr)
+    // console.log(arr)
     arr.forEach(function(thing) {
       $("ul").append(`<li>${thing}</li>`);
     })
@@ -17,7 +17,7 @@ $(document).ready(function() {
     for(var i=1; i<4; i++) {
       friends.push($(`#friend${i}`).val())
     }
-    console.log(friends)
+    // console.log(friends)
     //friends.forEach(function(friend) {
       //alert(`Hello, ${friend}.`)
       //$("ul#friendResult").append(`<li>${friend}</li>`);
@@ -34,23 +34,24 @@ $(document).ready(function() {
 
   $("button#filterButton").click(function() {
     event.preventDefault();
-    var oldWords = [];
-    var newWords = [];
-    var wordCount = 0;
-    oldWords.push($("#sentence").val());
-    console.log(words)
 
-    var newWords = oldWords.map
+    var sentence = $("#sentence").val();
+    console.log(sentence);
+    var words = sentence.split(" ");
+    console.log(words);
+    var newObject = {};
 
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i];
+      console.log(word);
+      newObject[word] += 1;
+      if (Number.isNaN(newObject[word]) === true) {
+          newObject[word] = 1;
+      }
+    }
+    console.log(newObject);
 
-    
-    
-  var name = function(word){
-    return word + 1;
-  }
-    var name = (word => word + 1)
-
-  })
+  }); 
   
 
 });
